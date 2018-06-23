@@ -4,5 +4,5 @@ import AppModule from './app.module';
 angular.element(() => {
   const appEl = document.createElement('app');
   document.body.appendChild(appEl);
-  angular.bootstrap(document.body, [AppModule]);
+  angular.bootstrap(document.body, [AppModule], {strictDi: true});
 });
