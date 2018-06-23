@@ -1,7 +1,7 @@
 import HelloController from './hello.controller';
 import template from './hello.html';
 
-const HelloComponent: angular.IComponentOptions = {
+const HelloComponent: ng.IComponentOptions = {
   template,
   controller: HelloController,
 };

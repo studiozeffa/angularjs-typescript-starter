@@ -1,6 +1,6 @@
 import styles from './hello.css';
 
-class HelloController {
+class HelloController implements ng.IController {
   styles: any;
   message: string;
 
