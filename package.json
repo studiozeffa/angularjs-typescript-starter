@@ -9,7 +9,10 @@
     "test": "jest --coverage",
     "test:watch": "jest --coverage --watch"
   },
-  "keywords": ["angularjs", "typescript"],
+  "keywords": [
+    "angularjs",
+    "typescript"
+  ],
   "author": "Tom Spencer <tom.spencer@studiozeffa.com>",
   "license": "ISC",
   "devDependencies": {
