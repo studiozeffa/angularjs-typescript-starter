@@ -1,0 +1,27 @@
+.container {
+  width: 780px;
+  margin: 0 auto;
+  font-family: Lucida,Helvetica,sans-serif;
+  font-variant: small-caps;
+}
+
+.title {
+  font-size: 2em;
+  text-align: center;
+}
+
+.image {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.num {
+  font-weight: bold;
+  text-align: center;
+}
+
+.license {
+  text-align: center;
+}

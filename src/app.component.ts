@@ -1,7 +1,9 @@
-import template from './app.html';
-
 const AppComponent: angular.IComponentOptions = {
-  template,
+  template: `
+  <div class="container">
+    <comic />
+  </div>
+  `,
 };
 
 export default AppComponent;

@@ -1,4 +1,4 @@
 import * as angular from 'angular';
-import HelloModule from './hello/hello.module';
+import ComicModule from './comic/comic.module';
 
-export default angular.module('app.components', [HelloModule]).name;
+export default angular.module('app.components', [ComicModule]).name;
