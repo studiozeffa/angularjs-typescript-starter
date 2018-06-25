@@ -8,18 +8,26 @@ export class ComicController implements ng.IController {
   constructor(private comicService: ComicService) {};
 
   $onInit() {
+    this.fetchComic();
+  }
+
+  onRandomComicClick() {
+    this.fetchComic();
+  }
+
+  private fetchComic(): ng.IPromise<IComic> {
     this.isLoading = true;
-    this.comicService
+    return this.comicService
       .getRandomComic()
       .then(comic => this.comic = comic)
-      .finally(() => this.isLoading = false);
+      .finally(() => this.isLoading = false)
   }
 }
 
 const ComicComponent: ng.IComponentOptions = {
   controller: ComicController,
   template: `
-    <comic-ui comic="$ctrl.comic" loading="$ctrl.isLoading" />
+    <comic-ui comic="$ctrl.comic" loading="$ctrl.isLoading" on-random-comic-click="$ctrl.onRandomComicClick()" />
   `
 };
 

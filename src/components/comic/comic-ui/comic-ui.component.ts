@@ -1,17 +1,11 @@
 import styles from './comic-ui.css';
 
-export class ComicUIController implements ng.IController {
-  $onInit() {
-    console.log(this);
-  }
-}
-
 const ComicUIComponent: ng.IComponentOptions = {
   bindings: {
     comic: '<',
     loading: '<',
+    onRandomComicClick: '&',
   },
-  controller: ComicUIController,
   template: `
     <div class="${styles.container}">
       <comic-loading ng-if="!$ctrl.comic && $ctrl.loading"></comic-loading>
@@ -22,9 +16,10 @@ const ComicUIComponent: ng.IComponentOptions = {
         <p class="${styles.num}">#{{$ctrl.comic.num}}</p>
         <img class="${styles.image}" ng-src="{{$ctrl.comic.img}}" alt="{{$ctrl.comic.alt}}" />
         <p class="${styles.license}"><a href="https://xkcd.com/license.html">License</a></p>
+        <btn class="${styles.button}" on-click="$ctrl.onRandomComicClick()" disabled="$ctrl.loading">Another?</btn>
       </div>
     </div>
-  `
+  `,
 };
 
 export default ComicUIComponent;

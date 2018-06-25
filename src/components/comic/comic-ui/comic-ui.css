@@ -25,3 +25,9 @@
 .license {
   text-align: center;
 }
+
+.button {
+  margin: 20px auto;
+  font-variant: inherit;
+  font-size: 1.1em;
+}
