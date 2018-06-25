@@ -1,11 +1,11 @@
-import ComicService, { IComic } from './comic.service';
+import { IComic, IComicService } from './comic.service';
 
 export class ComicController implements ng.IController {
   static $inject: string[] = ['ComicService'];
   comic: IComic;
   isLoading = false;
 
-  constructor(private comicService: ComicService) {};
+  constructor(private comicService: IComicService) {};
 
   $onInit() {
     this.fetchComic();

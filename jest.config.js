@@ -1,9 +1,9 @@
 module.exports = {
   transform: {
-    "^.+\\.tsx?$": "ts-jest",
+    "^.+\\.ts$": "ts-jest",
   },
-  testRegex: "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
-  moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
+  testRegex: "(/__tests__/.*|(\\.|/)(test|spec))\\.(js|ts)$",
+  moduleFileExtensions: ["ts", "js", "json", "node"],
   moduleNameMapper: {
     "\\.css$": "identity-obj-proxy"
   }
