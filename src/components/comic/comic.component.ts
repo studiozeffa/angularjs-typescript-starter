@@ -2,7 +2,7 @@ import { IComic, IComicService } from './comic.service';
 
 export class ComicController implements ng.IController {
   static $inject: string[] = ['ComicService'];
-  comic: IComic;
+  comic: IComic | null = null;
   isLoading = false;
 
   constructor(private comicService: IComicService) {};
@@ -18,7 +18,7 @@ export class ComicController implements ng.IController {
   private fetchComic(): ng.IPromise<IComic> {
     this.isLoading = true;
     return this.comicService
-      .getRandomComic()
+      .getRandomComic(this.comic)
       .then(comic => this.comic = comic)
       .finally(() => this.isLoading = false)
   }

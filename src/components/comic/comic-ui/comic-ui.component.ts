@@ -14,9 +14,11 @@ const ComicUIComponent: ng.IComponentOptions = {
           <h1 class="${styles.title}">{{$ctrl.comic.title}}</h1>
         </header>
         <p class="${styles.num}">#{{$ctrl.comic.num}}</p>
-        <img class="${styles.image}" ng-src="{{$ctrl.comic.img}}" alt="{{$ctrl.comic.alt}}" />
+        <img data-e2e="comic-img" class="${styles.image}" ng-src="{{$ctrl.comic.img}}" alt="{{$ctrl.comic.alt}}" />
         <p class="${styles.license}"><a href="https://xkcd.com/license.html">License</a></p>
-        <btn class="${styles.button}" on-click="$ctrl.onRandomComicClick()" disabled="$ctrl.loading">Another?</btn>
+        <btn data-e2e="comic-btn" class="${
+          styles.button
+        }" on-click="$ctrl.onRandomComicClick()" disabled="$ctrl.loading">Another?</btn>
       </div>
     </div>
   `,

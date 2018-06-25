@@ -8,7 +8,7 @@ export interface IComic {
 }
 
 export interface IComicService {
-  getRandomComic: () => ng.IPromise<IComic>
+  getRandomComic: (currentComic: IComic | null) => ng.IPromise<IComic>
 }
 
 export default class ComicService implements IComicService {
@@ -25,8 +25,12 @@ export default class ComicService implements IComicService {
     return this.$http.get<IComic>(apiUrl).then(res => res.data);
   }
 
-  getRandomComic(): ng.IPromise<IComic> {
-    const comicNum = this.getRandomNumber();
+  getRandomComic(current: IComic | null): ng.IPromise<IComic> {
+    const currentNum = (current && current.num) || -1;
+    let comicNum = currentNum;
+    while(comicNum === currentNum) {
+      comicNum = this.getRandomNumber()
+    }
     console.log(`Fetching comic #${comicNum}`);
     return this.fetchJSON(comicNum);
   }
